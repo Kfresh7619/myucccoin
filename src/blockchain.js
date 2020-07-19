@@ -11,8 +11,9 @@ class Activity {
 	this.timestamp = Date.now();
     }
 
-    calculateHash() {
-        return SHA256(this.fromAddress + this.toAddress + this.amount).toString();
+    hashComputation() {
+        //return SHA256(this.fromAddress + this.toAddress + this.amount).toString();
+	return SHA256.createHash('sha256').update(this.fromAddress + this.toAddress + this.amount + this.timestamp).digest('hex');
     }
 
     signActivities(signKey) {
@@ -156,3 +157,5 @@ class Blockchain {
 
 module.exports.Blockchain = Blockchain;
 module.exports.Activity = Activity;
+module.exports.MyBlock = MyBlock;
+
