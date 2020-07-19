@@ -1,4 +1,5 @@
-const SHA256 = require("crypto-js/sha256");
+//const SHA256 = require("crypto-js/sha256");
+const SHA256 = require('crypto');
 const MYELLIPTIC = require('elliptic').ec;
 const ec = new MYELLIPTIC('secp256k1');
 
@@ -7,6 +8,7 @@ class Activity {
         this.fromAddress = fromAddress;
         this.toAddress = toAddress;
         this.amount = amount;
+	this.timestamp = Date.now();
     }
 
     calculateHash() {
