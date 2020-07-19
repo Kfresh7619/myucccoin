@@ -1,7 +1,7 @@
-//const SHA256 = require("crypto-js/sha256");
-const SHA256 = require('crypto');
+const SHA256 = require("crypto-js/sha256");
 const MYELLIPTIC = require('elliptic').ec;
 const ec = new MYELLIPTIC('secp256k1');
+const debug = require('debug')('myUCCCoin:blockchain');
 
 class Activity {
     constructor(fromAddress, toAddress, amount) {
