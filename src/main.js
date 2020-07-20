@@ -11,7 +11,7 @@ const myWalletAddress = myKey.getPublic('hex');
 // This will create new instance of my Blockchain class
 const myUCCCoin = new Blockchain();
 
-const act1 = new Activity(myWalletAddress, "Public key goes here", 40);
+const act1 = new Activity(myWalletAddress, "address2", 40);
 act1.signActivities(myKey);
 myUCCCoin.addActivity(act1);
 
@@ -22,7 +22,7 @@ myUCCCoin.minePendingActivities(myWalletAddress);
 
 
 // Create second transaction
-const act2 = new Activity(myWalletAddress, "Public key goes here", 100);
+const act2 = new Activity(myWalletAddress, "address1", 100);
 act2.signActivities(myKey);
 myUCCCoin.addActivity(act2);
 
